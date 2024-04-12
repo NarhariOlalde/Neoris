@@ -14,7 +14,7 @@
   "chat_bot": {
     "pregunta_actual": "¿Cuál es tu pregunta?",
     "respuesta_actual": "Esta es una respuesta.",
-    "historial_preguntas_respuestas" [{
+    "historial_preguntas_respuestas": [{
       "pregunta": "¿Cuál es tu pregunta?",
       "respuesta": "Esta es una respuesta.",
       "fecha": "2021-09-01T00:00:00.000Z"
@@ -37,7 +37,7 @@
   "chat_bot": {
     "pregunta_actual": "¿Cuál es tu pregunta?",
     "respuesta_actual": "Esta es una respuesta.",
-    "historial_preguntas_respuestas" [{
+    "historial_preguntas_respuestas": [{
       "pregunta": "¿Cuál es tu pregunta?",
       "respuesta": "Esta es una respuesta.",
       "fecha": "2021-09-01T00:00:00.000Z"
