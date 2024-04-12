@@ -28,7 +28,11 @@ const userSchema = new mongoose.Schema({
   chat_bot: {
     pregunta_actual: String,
     respuesta_actual: String,
-    historial_preguntas_respuestas: String
+    historial_preguntas_respuestas: [{
+      pregunta: String,
+      respuesta: String,
+      timestamp: Date
+    }]
   }
 });
 
