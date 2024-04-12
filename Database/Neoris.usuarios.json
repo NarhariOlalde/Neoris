@@ -1,0 +1,38 @@
+[{
+  "_id": 1,
+  "nombre": "Nombre0",
+  "apellido": "Apellido0",
+  "correo": "user0@example.com",
+  "password": "password123",
+  "sexo": "Femenino",
+  "genero": "Masculino",
+  "edad": 37,
+  "localizacion": "Localizacion9",
+  "empleado": true,
+  "rol_empleado": "Rol1",
+  "equipos_empleado": "Equipo1",
+  "chat_bot": {
+    "pregunta_actual": "¿Cuál es tu pregunta?",
+    "respuesta_actual": "Esta es una respuesta.",
+    "historial_preguntas_respuestas": "Histórico de preguntas y respuestas."
+  }
+},
+{
+  "_id": 2,
+  "nombre": "Nombre1",
+  "apellido": "Apellido1",
+  "correo": "user1@example.com",
+  "password": "password123",
+  "sexo": "Masculino",
+  "genero": "No Binario",
+  "edad": 44,
+  "localizacion": "Localizacion4",
+  "empleado": false,
+  "rol_empleado": null,
+  "equipos_empleado": null,
+  "chat_bot": {
+    "pregunta_actual": "¿Cuál es tu pregunta?",
+    "respuesta_actual": "Esta es una respuesta.",
+    "historial_preguntas_respuestas": "Histórico de preguntas y respuestas."
+  }
+}]
