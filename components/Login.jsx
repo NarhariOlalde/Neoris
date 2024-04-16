@@ -8,28 +8,33 @@ function Login() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const { data } = await axios.post('http://localhost:5001/api/login', { username, password });
-            localStorage.setItem('token', data.token);
-            // Redirect user or show success message
-            console.log('Login successful:', data);
-
+            const { data } = await axios.post('http://localhost:5005/api/login', { username, password });
+            if (data.token) {
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('username', username); // Store username
+                window.location.href = '/'; // Redirect to homepage
+            } else {
+                alert('Login failed: ' + data.message); // Show failure message from server
+            }
         } catch (error) {
-            console.error('Login failed:', error.response.data);
+            alert('Login failed: ' + (error.response ? error.response.data.message : 'Server error'));
         }
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Username:
-                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-            </label>
-            <label>
-                Password:
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            </label>
-            <button type="submit">Login</button>
-        </form>
+        <div className="login-container">
+            <form onSubmit={handleSubmit} className="login-form">
+                <label className="login-label">
+                    Username:
+                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} className="login-input" />
+                </label>
+                <label className="login-label">
+                    Password:
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="login-input" />
+                </label>
+                <button type="submit" className="login-button">Login</button>
+            </form>
+        </div>
     );
 }
 

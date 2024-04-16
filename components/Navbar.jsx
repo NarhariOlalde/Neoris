@@ -1,21 +1,28 @@
 import React from "react";
 import Link from "next/link";
 import NavItem from "./NavItem";
-
-const MENU_LIST = [
-    {
-        text: "Home",
-        href: "/",
-    }, {
-        text: "About",
-        href: "/about",
-    }, {
-        text: "Log-in",
-        href: "/log-in",
-    },
-]
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+    const [username, setUsername] = useState(null);
+
+    useEffect(() => {
+        setUsername(localStorage.getItem('username'));
+    }, []);
+
+    const MENU_LIST = [
+        {
+            text: "Home",
+            href: "/",
+        }, {
+            text: "About",
+            href: "/about",
+        }, {
+            text: username || "Log-in", // Display username if exists, else display "Log-in"
+            href: "/log-in",
+        },
+    ]
+
     return (
         <header>
             <nav className="nav">
