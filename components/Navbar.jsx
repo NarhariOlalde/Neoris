@@ -15,8 +15,8 @@ const Navbar = () => {
             text: "Home",
             href: "/",
         }, {
-            text: "About",
-            href: "/about",
+            text: "FAQ",
+            href: "/faq",
         }, {
             text: username || "Log-in", // Display username if exists, else display "Log-in"
             href: "/log-in",

@@ -1,9 +1,16 @@
+import React from "react";
+import style from "../styles/index.module.css";
+import Footer from "../components/Footer";
 
-export default function Home() {
-  return (
-    <div className="center">
-      <h2>Home Page</h2>
-    </div>
-  );
-}
+import HeroSection from "../components/HeroSection";
 
+function Home() {
+    return (
+        <>
+          <HeroSection />
+          <Footer />
+        </>
+    );
+    }
+
+export default Home

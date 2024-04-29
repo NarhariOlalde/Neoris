@@ -1,0 +1,30 @@
+.hero {
+  position: relative; /* Ensure the content inside the hero section stays within */
+  height: 100vh; /* Set the height to fill the viewport */
+  overflow: hidden; /* Hide any overflow content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/ye.jpg'); /* Adjust the path to your image */
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Ensure the background image is behind the content */
+}
+
+.heroContent {
+  position: relative; /* Ensure the content stays on top of the background image */
+  z-index: 1; /* Ensure the content stays on top of the background image */
+  max-width: 600px;
+  padding: 20px;
+}

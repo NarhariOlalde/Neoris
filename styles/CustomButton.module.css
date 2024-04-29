@@ -1,0 +1,12 @@
+.transparentButton {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+  }
+  
+  .customButton {
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+  }
+  
