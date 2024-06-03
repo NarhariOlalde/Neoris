@@ -227,3 +227,8 @@ justify-content: center;
 .signup-button:hover {
   background-color: #0056b3;
 }
+
+.pro-sidebar {
+  height: 100vh; 
+}
+

@@ -1,0 +1,273 @@
+NEORIS Data & AI Lab
+We accelerate the transformation of organizations by focusing on those areas in which artificial intelligence has a more differential and larger-scale impact and making rational and responsible use of data.
+Business Translation
+Identification of improvement opportunities by acting as a bridge between the business units and the analytical teams. 
+Analytics
+Data scientists develop the algorithms and test the models. 
+Architecture
+Designing the precise platform solutions for the deployment of artificial intelligence solutions. 
+DATA HUB
+Activation of the data flow necessary for each initiative, making it available to the teams with the appropriate quality and structure.
+Engineering and Development
+Deployment of artificial intelligence solutions, integrating them into applications, and ensuring their maintenance.
+===================================================================================================================================================================================================================================
+NEORIS Knowledge Discovery Platform
+KDP is an intelligent document processing platform integrated end-to-end in the customer journey
+It combines distinct AI techniques, like deep learning, natural language processing, computer vision, and semantic understanding to digitize complex documents, both structured and unstructured, in seconds. 
+Processing with Machine Learning
+Advanced search and augmented analytics technologies
+Semantic context of knowledge
+USAGE CASES:
+Sufficient power
+Balance sheets
+Financial statements
+Policies
+Contracts
+Forms
+Mortgages
+Estate
+===================================================================================================================================================================================================================================
+NEORIS Digital Enablement
+Transform the customer and employee experience, “end-to-end”
+
+Digitize the customer experience across channels (online & branch)
+Create Digital Products and experiences not just projects
+Create real-time digital insights to transform the customer experience
+Measure the digital journey across the value chain
+Interdisciplinary Industry Experience
+
+Transform the operating model
+
+Nimble Architecture and API transformation to activate seamless integration across the enterprise, partners, and brokers
+Leverage data and AI to enable real-time decision making and automation
+Create B2B platforms that can be easily integrated with partners 
+Optimize operating expenditure by digitizing and automating the process
+
+Realtime Decision Making with AI
+Data Monetization for Real-Time Decision Making
+AI Speed-to-Value Accelerators 
+Flexible Cloud Architecture & Engineering Environment 
+Data Governance, Security, & Privacy
+
+Customer and Employee Centricity
+User Experience, Customer Experience and Journey
+E2E Digital Product Development
+Native Cloud Development
+Agile Cross Functional Teams
+
+Digitize Operating Model
+AI and RPA Knowledge Automation
+Business Platform Enablement
+Self Healing Scalable Infrastructure
+B2B Platform Enablement
+
+Smart Operations
+Help Desk and Virtual Agents
+Intelligent Monitoring & Observability
+24/7 AI powered  App Support
+===================================================================================================================================================================================================================================
+Big Data & Analytics, AI & Data Science 
+Services Portfolio (What do we do?)
+Data Strategy
+Data Strategy & Business alignment. Data Journey. 
+Data Architecture
+Architecture Strategy, Data Governance Strategy, 
+Data Engineering
+Data Modeling, Big Data & Graph & Analytical DB, Data Ingestion, Batch & Real-Time Processing, Knowledge Harvesting,
+Data Science
+Use-Case Define & ROI prioritization, Custom Machine Learning Models, Operationalize ML Models, Enhancement & Calibration ML Models.
+Data Visualization / Consumption
+Analytical and Operational Dashboards & Reporting, Alerts & Notifications, Data as a Service, Integrate Web & Mobile Apps
+AI & Machine Learning Knowledge Discovery
+Knowledge Tabs & Dashboards, Data Storytelling,
+360º Digital Insights
+Tools: 
+Kafka, Spark, Hadoop, Cloudera, Stratio, Neo4j, Python, Tensor Flow, Microstrategy, Tableau, Confluent, Airflow, Informatica, GCP, AWS, Azure, SAP, Qlik, Power BI
+Differentiators
+Flexibility: Adaptability of services based on real demand, business need and customer changes.
+Business Knowledge: Deep knowledge in different industries focus on client core business to provide solutions with business impact.
+Certified Practice: Broad capabilities globally using the latest technologies around information management.
+Long-Term Relationship: Clients renew with us for the focus and quality of the services we provide.
+Solution Provider: Provide platform as a service to provide different and custom solutions to our clients.
+===================================================================================================================================================================================================================================
+Digital Product Development
+Services Portfolio (What do we do?)
+Product/Software Development
+Create digital platforms & products (Mobile & Web), transform client software platforms to a digital ecosystem, API development & Integration.
+Quality Engineering
+Testing Consultancy
+Digital Testing
+Automation Testing
+Performance Testing
+Traditional Testing
+Agile
+Product Discovery together with Enterprise UX
+Agile Teams
+DevSecOps
+Some of our capabilities:
+iOS, Swift, Android, Kotlin, HTML, JAVA, IONIC,Zephyr, Microfocus, DotNet, C#, Bootstrap, SonarQube, Appian, Fortify, Angular, React, Kubernetes, docker, spring, JFrog Artifactory, JIRA, Cofluence, Bitbucket, Jenkins, JMeter, Grafana, AWS, Azure, Visual Studio, Azure DevOps, OpenShift
+Differentiators
+Integration of key areas:UX + Digital Architecture + Agile + Development + Testing + DevOps + DevSecOps + Support/Performance Monitoring.
+Agile teams: Framework + Methodologies + Tools.
+Cloud native development: Cloud Agnostic MSFT Azure , AWS & GCP cloud environments.
+Experience in product development:Instead of traditional project focus: Digital Product Lifecycle, Product Discovery, Product Engineering, DevOps, DevSecOps, Product Implementation, Support and Maintenance.
+Innovation focus: Founder of Innovation Ecosystem: Private Companies, Universities, Technology Companies and Startups. Own set of Innovation Labs.
+===================================================================================================================================================================================================================================
+Quality Engineering
+Services Portfolio (What do we do?)
+Testing Offer
+Testing Consultancy
+Digital Testing
+Automated Test
+Performance Testing
+Traditional Testing
+Specialized Testing
+Specialized testing in platforms, tools and methodologies, i.e., SAP, eCommerce, Banner, Cloud, Open-Source tools, etc.
+On-Demand Testing Services
+Testing services offer based in productivity and flexible baseline that can be tailored to customers business  needs.
+Some of our capabilities:
+SAP, ALM OCTANE, JIRA, Robot Framework, Zephyr, Mantis, Squash, JMeter, Selenium, BrowserStack, Lambda Test, Microfocus ALM, Microfocus LoadRunner, Microfocus UFT, Xray, Grafana
+Differentiators
+Digital Testing Experts: Specialized services in testing for UX/UI, multi-devices, multi-browsers, devices performance, test automation.
+Agile Test Teams: Agile test Framework, tools and testers with agile test experience
+Test Accelerators: Repeatable methodologies, automated tools, templates and reusable  test automation frameworks
+Specialized Testing Career Paths: QA & Testing career path with different levels and technical specializations
+Process Certification: All our testing process and methodologies are ISO 9001/2015 certified.
+===================================================================================================================================================================================================================================
+User Experience
+Services Portfolio (What do we do?)
+Discovery
+User Research process to understand the business challenges and end-user needs, to decrease uncertainty, focus resources before starting development and help define a new user experience.
+User Experience Design
+Creation of interface design workflows based on the business and user needs, following usability principles, information architecture and interaction best practices. 
+User Experience Analysis
+Expert review using usability principles to evaluate how easy to use a user interface is and generate recommendations to better the product.
+Customer Research
+Usability testing and interviews to evaluate with real users how easy to use a product is, to identify problems and discover opportunities to enhance the experience and increase adoption.
+Product Design
+From inception to product lunch. Understand the business needs interconnections with users needs, blue ocean opportunities, ensuring the adoption and success in the design, product validation, development and launch of your product. 
+Our main tools: Figma Design, Sketch, InVision Prototype, Miro Collaborate, Optimal Workshop, User Testing
+Differentiators
+Reliability: Our team is expert in blending in and earning the trust of the business and final users, to understand and discover the business’ challenges and user’s needs. 
+Measurable Experience: We deliver meaningful and measurable solutions to help solve our clients’ challenges.
+Long-Term Relationship: Clients renew with us because of our commitment to design the best possible experience, by adapting products and services to the day to day reality of users.
+Agnostic: We focus on providing consultant recommendations that can help the business select the proper tech solutions that fit their ecosystem.
+===================================================================================================================================================================================================================================
+Cloud, Integration, Digital & Enterprise Architecture
+Services Portfolio (What do we do?)
+Digital Platform
+Digital Platform architecture & strategy design and enablement. Digital Platform is cloud based and made up of reusable business, data and infrastructure components.
+Solution architecture for the digital business.
+Cloud Architecture
+The agility promise for the Digital World can only happen if in the Cloud. We strategize and design architecture, adoption and enablement.
+Resiliency, availability, scalability, security, business alignment – cloud foundational principles we follow.
+Digital Integration & API Management
+API, streaming and data integration happens in different places of a Digital architecture.
+Integration is at the heart of Digital Transformation, but it’s hard to get it right. 
+Modernize your applications with APIfication in mind, but make sure you’re accomplishing the reusability and governance your organization needs.
+Enterprise Architecture & IT Consulting
+Navigating Digital Transformation requires a clear vision and journey, together with an ambitious vision. Without it, management careens from one market opportunity to the next, unable to leverage reusable capabilities
+Business Alignment as a foundation to all technological decisions.
+Some of our alliances: Azure, AWS, GCP, Terraform Cloud, SAP, Mulesoft, LeanIX, Microfocus. 
+Differentiators
+Experience: Over 15 years of architecture practice, our architects average 20 years of experience in IT working different industries and companies of all sizes
+Methodologies and Tools: Delivering our services in a predictive manner can be done by leveraging our methodologies, frameworks , maturity models and reference architectures
+Accelerators: Based on our frameworks and reference architectures, we’ve developed solution accelerators for specific architecture patterns
+Technology agnostic and innovative: Our approach places the customer in the center of what we do, and we make sure the architecture adds value and it’s realized by leveraging the technology that best fits the customer needs and those of the problem being solved
+===================================================================================================================================================================================================================================
+Operations Transformation
+Services Portfolio (What do we do?)
+Process Optimization and New Operating Models
+Help clients to think through and design lean operating models.
+Assess current operating models to identify efficiency levers and execution gaps.
+Define roadmaps to transform the customer´s operating model removing the execution gaps so as to be able to scale and sustain a new digital ambition and customer experience.
+Intelligent Process Automation
+Combine emerging automation techniques such as low-code process automation platforms, RPA, process mining, conversational agents and artificial intelligence to smartly redesign processes end2end.
+Transformation Management Office
+Govern and act as a catalyzer of complex Transformation Programs to meet the pursued business objectives.
+Ensure objectives are met in terms of costs, timeframe and quality.
+Connect the Management team with the Technical teams to always have a reliable photo of the Program.
+Some of our tools: UI Path, Atomation Anywherem blueprism, Power Automate, Agile Point, Bizagi, Appian,
+Differentiators:
+Holistic approach: Considering all dimensions (Organizational, Processes, IT and People) for succeeding in Digital Transformation.
+Industry expertise: Deep industry knowledge, technical know-how and global delivery.
+Agnostic: Technology agnostic advice.
+Customer oriented: End-to-end focus on customer’s touch points – high level of customer centricity.
+KPI driven: Focused in generating measurable and tangible returns
+===================================================================================================================================================================================================================================
+Run & Operate
+Services Portfolio (What do we do?)
+Applications and Infrastructure Support
+Level 1, 2 and 3 Support,  attention and resolution of service requests, incidents, problems, changes, enhancements, 
+self-service enablement with higher rates of automated resolution
+Digital Observability
+24x7 automated and proactive monitoring (multi-cloud, 
+Hybrid operations), alert & event management, FINOPs, 
+self-healing experience, autonomous operations
+IT Transformation
+Evolution of applications and new requirements, 
+implementation of ServiceNow & Dynatrace platforms
+VAR Service for SAP ERPs
+Some of our tools: Dynatrace, ServiceNow, 
+Languages: Spanish, English, Portuguese, French
+Coverage:8x5 Office Hours
+24x5, 24x7 Active Duty
+24x5, 24x7 Reactive
+Differentiators
+Innovation
+Innovative service model combining AI with Skilled Talent
+SMART AMS
+> 60% of automated resolution
+> 95% Optimization on MRT
+At least 20% reduction in tickets
+Self IT
+We integrate ITOPs, ITSM tools and resolution capabilities achieving a true user experience around self-service and self-healing for autonomous operations
+DNA
+AMS teams are optimized and focused with specific career paths to develop strategic skills
+Long-Term Relationship
+Clients renew with us for the focus and quality of the services we provide.
+Transition
+Effectiveness
+We have taken control of more than 60 operations with a 100% of effectiveness
+Platforms & Technologies
+SAP S4, ECC
+SAP BI, BO
+SAP MII/ME
+SAP HCM
+SAP SSFF
+SAP CRM
+SAP SRM
+SAP SCM
+SAP BASIS
+SAP PI, PO
+SAP Portal
+SAP Hybris
+SAP IS
+ABAP, FIORI
+Web Dynpro
+JAVA
+.NET
+META4
+MS SQL
+WEB
+MS SharePoint
+MS Dynamics
+Mobile: iOS, Android
+DBA: HANA, Oracle, SQL,  Sybase
+Infrastructure: OS admin, Sys admin, VMware, net admin
+Cloud: Azure, AWS
+Workforce
+ServiceNow
+Dynatrace
+
+
+
+
+
+
+
+
+
+
+
+

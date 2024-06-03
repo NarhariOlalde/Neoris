@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import NavItem from "./NavItem";
-import { useEffect, useState } from "react";
 
 const Navbar = () => {
     const [username, setUsername] = useState(null);
@@ -9,6 +8,8 @@ const Navbar = () => {
     useEffect(() => {
         setUsername(localStorage.getItem('username'));
     }, []);
+
+    const isUserLoggedIn = username !== null;
 
     const MENU_LIST = [
         {
@@ -19,9 +20,10 @@ const Navbar = () => {
             href: "/faq",
         }, {
             text: username || "Log-in", // Display username if exists, else display "Log-in"
-            href: "/log-in",
+            href: isUserLoggedIn ? "/" : "/log-in", // If user is logged in, link to home page, else link to log-in page
+            style: isUserLoggedIn ? { backgroundColor: "black", color: "white", padding: "5px 10px", borderRadius: "5px" } : {}, // Apply inline style if user is signed in
         },
-    ]
+    ];
 
     return (
         <header>
@@ -37,13 +39,11 @@ const Navbar = () => {
                 </div>
 
                 <div className="nav__menu-list">
-                    {MENU_LIST.map((menu, idx) => {
-                        return (
-                            <div key={menu.text}>
-                                <NavItem {...menu} />
-                            </div>
-                        )
-                    })}
+                    {MENU_LIST.map((menu, idx) => (
+                        <div key={menu.text}>
+                            <NavItem {...menu} />
+                        </div>
+                    ))}
                 </div>
             </nav>
         </header>

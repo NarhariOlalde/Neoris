@@ -1,0 +1,7 @@
+crewai
+faiss-cpu
+Flask
+flask-cors
+langchain
+langchain-community
+transformers

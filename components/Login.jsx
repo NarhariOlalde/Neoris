@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+// Historia #5
+// Título: Crear página de inicio de sesión (Log In) con conexión a la API
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');

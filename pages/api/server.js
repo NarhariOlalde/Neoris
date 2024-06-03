@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
+const path = require('path');
+const { spawn } = require('child_process');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 app.use(bodyParser.json());
@@ -125,6 +128,73 @@ app.get('/users/:id', (req, res) => {
       });
 });
 
+// CRUD operations for users
+// Create User Endpoint (POST)
+// Create User Endpoint (POST)
+app.post('/users', async (req, res) => {
+  try {
+    const userId = await getNextSequenceValue('userId'); // Get the next numeric ID
+    console.log('Next user ID:', userId); // Log the next user ID
+
+    // Merge request data with default values for properties
+    const userData = {
+      _id: userId,
+      nombre: req.body.nombre || '',
+      apellido: req.body.apellido || '',
+      correo: req.body.correo || '',
+      password: req.body.password || '',
+      sexo: req.body.sexo || '',
+      genero: req.body.genero || '',
+      edad: req.body.edad || 0,
+      localizacion: req.body.localizacion || '',
+      empleado: req.body.empleado || false,
+      rol_empleado: req.body.rol_empleado || null,
+      equipos_empleado: req.body.equipos_empleado || null,
+      chat_bot: {
+        pregunta_actual: '',
+        respuesta_actual: '',
+        historial_preguntas_respuestas: []
+      }
+    };
+
+    const newUser = new User(userData);
+    await newUser.save();
+    res.status(201).send(newUser);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
+
+
+
+// Update an existing user
+app.put('/users/:id', async (req, res) => {
+  try {
+    const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+    if (!user) {
+      return res.status(404).send();
+    }
+    res.send(user);
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
+// Delete a user
+app.delete('/users/:id', async (req, res) => {
+  try {
+    const user = await User.findByIdAndDelete(req.params.id);
+    if (!user) {
+      return res.status(404).send();
+    }
+    res.send(user);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+
 
 const secretKey = 'your_secret_key';  
 
@@ -147,6 +217,41 @@ app.post('/api/login', async (req, res) => {
         res.status(500).json({ message: 'Server error' });
         console.error('Login failed:', error);
     }
+});
+
+const fs = require('fs');
+
+app.post('/api/chat', (req, res) => {
+  const { message } = req.body;
+  console.log('Received message:', message);
+
+  const pythonProcess = spawn('python', ['chatbot.py', message]);
+
+  let responseSent = false;
+  let chatbotResponse = '';
+
+  pythonProcess.stdout.on('data', (data) => {
+    chatbotResponse += data.toString();
+  });
+
+  pythonProcess.stderr.on('data', (data) => {
+    const errorData = data.toString();
+    console.error('Error from chatbot:', errorData);
+    fs.appendFileSync('chatbot_errors.log', errorData);  // Guardar advertencias y errores en un archivo de log
+  });
+
+  pythonProcess.on('close', (code) => {
+    if (!responseSent) {
+      if (chatbotResponse) {
+        console.log('Chatbot response:', chatbotResponse);
+        res.send(chatbotResponse);  // Enviar la respuesta del chatbot al cliente
+      } else {
+        console.log(`Child process exited with code ${code}`);
+        res.status(500).send('Chatbot process closed without response');
+      }
+      responseSent = true;
+    }
+  });
 });
 
 const port = process.env.PORT || 5005;
