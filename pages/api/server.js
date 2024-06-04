@@ -5,7 +5,6 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const path = require('path');
 const { spawn } = require('child_process');
-const jwt = require('jsonwebtoken');
 
 const app = express();
 app.use(bodyParser.json());
@@ -51,7 +50,6 @@ const counterSchema = new mongoose.Schema({
   sequence_value: Number
 });
 
-// Create a Counter model
 const Counter = mongoose.model('Counter', counterSchema);
 
 // Function to get the next sequence value for the specified key
@@ -104,8 +102,6 @@ app.post('/api/signup', async (req, res) => {
   }
 });
 
-
-
 // API to get all users
 app.get('/users', (req, res) => {
   User.find()
@@ -129,7 +125,6 @@ app.get('/users/:id', (req, res) => {
 });
 
 // CRUD operations for users
-// Create User Endpoint (POST)
 // Create User Endpoint (POST)
 app.post('/users', async (req, res) => {
   try {
@@ -165,9 +160,6 @@ app.post('/users', async (req, res) => {
   }
 });
 
-
-
-
 // Update an existing user
 app.put('/users/:id', async (req, res) => {
   try {
@@ -193,8 +185,6 @@ app.delete('/users/:id', async (req, res) => {
     res.status(500).send(error);
   }
 });
-
-
 
 const secretKey = 'your_secret_key';  
 
@@ -222,10 +212,10 @@ app.post('/api/login', async (req, res) => {
 const fs = require('fs');
 
 app.post('/api/chat', (req, res) => {
-  const { message } = req.body;
+  const { user_id, message } = req.body;
   console.log('Received message:', message);
 
-  const pythonProcess = spawn('python', ['chatbot.py', message]);
+  const pythonProcess = spawn('python', ['chatbot.py', message, user_id]);
 
   let responseSent = false;
   let chatbotResponse = '';
@@ -237,14 +227,14 @@ app.post('/api/chat', (req, res) => {
   pythonProcess.stderr.on('data', (data) => {
     const errorData = data.toString();
     console.error('Error from chatbot:', errorData);
-    fs.appendFileSync('chatbot_errors.log', errorData);  // Guardar advertencias y errores en un archivo de log
+    fs.appendFileSync('chatbot_errors.log', errorData);  // Save warnings and errors to a log file
   });
 
   pythonProcess.on('close', (code) => {
     if (!responseSent) {
       if (chatbotResponse) {
         console.log('Chatbot response:', chatbotResponse);
-        res.send(chatbotResponse);  // Enviar la respuesta del chatbot al cliente
+        res.send(chatbotResponse);  // Send the chatbot response to the client
       } else {
         console.log(`Child process exited with code ${code}`);
         res.status(500).send('Chatbot process closed without response');
