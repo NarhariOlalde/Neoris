@@ -21,7 +21,7 @@ users_collection = db['usuarios']
 
 ollama_llm = Ollama(model='llama3')
 parser = StrOutputParser()
-loader = TextLoader('NEORIS-ProductosyServicios.txt', encoding='utf-8')
+loader = TextLoader('/Users/gabrielmaynezgarcia/Documents/Tec/6toSemestre/Desarrollo_frumen/neoris_web/remote-repo/Neoris/pages/api/NEORIS-ProductosyServicios.txt', encoding='utf-8')
 document = loader.load()
 splitter = RecursiveCharacterTextSplitter(chunk_size=200, chunk_overlap=50)
 chunks = splitter.split_documents(document)
@@ -55,8 +55,11 @@ def chat():
         data = request.get_json()
         user_id = data.get('user_id')
         question = data.get('message')
+        print(f"Received message: '{question}' from user ID: {user_id}")
+
         response = get_response(question)
-        
+        print(f"Generated response: '{response}'")
+
         # Save the question and response to MongoDB
         if user_id:
             user = users_collection.find_one({"_id": user_id})
@@ -67,7 +70,7 @@ def chat():
                     "respuesta": response,
                     "timestamp": current_timestamp
                 }
-                users_collection.update_one(
+                result = users_collection.update_one(
                     {"_id": user_id},
                     {
                         "$set": {
@@ -79,10 +82,13 @@ def chat():
                         }
                     }
                 )
+                print(f"Update result: {result.modified_count} document(s) updated")
 
         return jsonify({'response': response})
     except Exception as e:
+        print(f"Error: {str(e)}")
         return jsonify({'error': str(e)}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

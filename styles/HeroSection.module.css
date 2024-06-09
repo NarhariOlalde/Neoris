@@ -1,21 +1,30 @@
+.heroWrapper {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
 .video {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: -1;
 }
 
 .herocontainer {
-    /* background: url('images/img-home.jpg') center center/cover no-repeat; */
+    position: relative;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);
-    object-fit: contain;
+    z-index: 1; /* Ensure content is above the video */
 }
 
 .herocontainer > h1 {
@@ -36,7 +45,7 @@
 
 .herobtns > * {
     margin: 10px;
-  }
+}
 
 .hero-btns .btn {
     margin: 6px;
@@ -51,9 +60,8 @@
         font-size: 70px;
         margin-top: -150px;
     }
-
 }
-    
+
 @media screen and (max-width: 768px) {
     .herocontainer > h1 {
         font-size: 50px;

@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import "../styles/globals.css";
 import Chatbot from "../components/Chatbot";
 import { useRouter } from 'next/router';
+import FooterTest from "../components/footer/footerTest";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -12,6 +13,9 @@ export default function App({ Component, pageProps }) {
       {!isDashboard && <Navbar />}
       {!isDashboard && <Chatbot />}
       <Component {...pageProps} />
+      <div style={{ backgroundColor: "#1C1C1C", width: "100%"}}>
+        <FooterTest />
+      </div>
     </>
   );
 }

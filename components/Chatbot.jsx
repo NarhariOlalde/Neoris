@@ -3,7 +3,8 @@ import axios from 'axios';
 import TypingIndicator from './TypingIndicator';
 
 // Importa tu icono aquí
-import chatIcon from './scb.jpeg';
+import chatIcon from '../public/scb.jpeg'
+
 
 const Chatbot = () => {
     const [expanded, setExpanded] = useState(false);
@@ -75,6 +76,7 @@ const Chatbot = () => {
                 cursor: 'pointer',
                 transition: 'width 0.3s, height 0.3s, background-color 0.3s, border-radius 0.3s, color 0.3s',
                 padding: '10px',
+                zIndex: 10000
             }}
             onClick={!expanded ? handleToggle : undefined} // Solo permite abrir el chatbot al hacer clic en el contenedor
         >
