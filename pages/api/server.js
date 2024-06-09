@@ -4,8 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const path = require('path');
-const { spawn } = require('child_process');
-const jwt = require('jsonwebtoken');
+const axios = require('axios');
 
 const app = express();
 app.use(bodyParser.json());
@@ -51,7 +50,6 @@ const counterSchema = new mongoose.Schema({
   sequence_value: Number
 });
 
-// Create a Counter model
 const Counter = mongoose.model('Counter', counterSchema);
 
 // Function to get the next sequence value for the specified key
@@ -104,8 +102,6 @@ app.post('/api/signup', async (req, res) => {
   }
 });
 
-
-
 // API to get all users
 app.get('/users', (req, res) => {
   User.find()
@@ -129,7 +125,6 @@ app.get('/users/:id', (req, res) => {
 });
 
 // CRUD operations for users
-// Create User Endpoint (POST)
 // Create User Endpoint (POST)
 app.post('/users', async (req, res) => {
   try {
@@ -165,9 +160,6 @@ app.post('/users', async (req, res) => {
   }
 });
 
-
-
-
 // Update an existing user
 app.put('/users/:id', async (req, res) => {
   try {
@@ -194,9 +186,7 @@ app.delete('/users/:id', async (req, res) => {
   }
 });
 
-
-
-const secretKey = 'your_secret_key';  
+const secretKey = 'neoris_secret_key';  
 
 app.post('/api/login', async (req, res) => {
     const { username, password } = req.body;
@@ -221,37 +211,18 @@ app.post('/api/login', async (req, res) => {
 
 const fs = require('fs');
 
-app.post('/api/chat', (req, res) => {
-  const { message } = req.body;
-  console.log('Received message:', message);
+app.post('/api/chat', async (req, res) => {
+  const { user_id, message } = req.body;
+  console.log('Received message:', message, 'from user:', user_id);
 
-  const pythonProcess = spawn('python', ['chatbot.py', message]);
-
-  let responseSent = false;
-  let chatbotResponse = '';
-
-  pythonProcess.stdout.on('data', (data) => {
-    chatbotResponse += data.toString();
-  });
-
-  pythonProcess.stderr.on('data', (data) => {
-    const errorData = data.toString();
-    console.error('Error from chatbot:', errorData);
-    fs.appendFileSync('chatbot_errors.log', errorData);  // Guardar advertencias y errores en un archivo de log
-  });
-
-  pythonProcess.on('close', (code) => {
-    if (!responseSent) {
-      if (chatbotResponse) {
-        console.log('Chatbot response:', chatbotResponse);
-        res.send(chatbotResponse);  // Enviar la respuesta del chatbot al cliente
-      } else {
-        console.log(`Child process exited with code ${code}`);
-        res.status(500).send('Chatbot process closed without response');
-      }
-      responseSent = true;
-    }
-  });
+  try {
+    const response = await axios.post('http://localhost:5000/api/chat', { user_id, message });
+    console.log('Chatbot response:', response.data);
+    res.json(response.data);  // Send the chatbot response to the client
+  } catch (error) {
+    console.error('Error calling Python server:', error);
+    res.status(500).send('Error communicating with chatbot server');
+  }
 });
 
 const port = process.env.PORT || 5005;

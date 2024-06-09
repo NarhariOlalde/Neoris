@@ -1,4 +1,8 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+import os
+import pymongo
+from datetime import datetime
 from langchain_community.llms import Ollama
 from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -7,15 +11,14 @@ from langchain_community.document_loaders import TextLoader
 from langchain_community.vectorstores import FAISS
 from langchain_core.runnables import RunnablePassthrough, RunnableParallel
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from flask import Flask, request, jsonify
-from flask_cors import CORS 
-import os
-
 
 app = Flask(__name__)
 CORS(app, origins='http://localhost:3000')
 
-# Inicializa los componentes del chatbot una sola vez
+client = pymongo.MongoClient('mongodb://localhost:27017/')
+db = client['neoris']
+users_collection = db['usuarios']
+
 ollama_llm = Ollama(model='llama3')
 parser = StrOutputParser()
 loader = TextLoader('/Users/gabrielmaynezgarcia/Documents/Tec/6toSemestre/Desarrollo_frumen/neoris_web/remote-repo/Neoris/pages/api/NEORIS-ProductosyServicios.txt', encoding='utf-8')
@@ -50,11 +53,42 @@ def get_response(question):
 def chat():
     try:
         data = request.get_json()
+        user_id = data.get('user_id')
         question = data.get('message')
+        print(f"Received message: '{question}' from user ID: {user_id}")
+
         response = get_response(question)
+        print(f"Generated response: '{response}'")
+
+        # Save the question and response to MongoDB
+        if user_id:
+            user = users_collection.find_one({"_id": user_id})
+            if user:
+                current_timestamp = datetime.utcnow()
+                chat_entry = {
+                    "pregunta": question,
+                    "respuesta": response,
+                    "timestamp": current_timestamp
+                }
+                result = users_collection.update_one(
+                    {"_id": user_id},
+                    {
+                        "$set": {
+                            "chat_bot.pregunta_actual": question,
+                            "chat_bot.respuesta_actual": response
+                        },
+                        "$push": {
+                            "chat_bot.historial_preguntas_respuestas": chat_entry
+                        }
+                    }
+                )
+                print(f"Update result: {result.modified_count} document(s) updated")
+
         return jsonify({'response': response})
     except Exception as e:
+        print(f"Error: {str(e)}")
         return jsonify({'error': str(e)}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
