@@ -1,8 +1,8 @@
 import { UserProvider } from './context/UserContext';
-import Navbar from '../components/Navbar';
-import Chatbot from '../components/Chatbot';
-import FooterTest from '../components/footer/FooterTest';
+import Navbar from '../components/navigation/navbar/Navbar';
+import Chatbot from '../components/ui/chatbot/Chatbot';
 import { useRouter } from 'next/router';
+import "../styles/globals.css";
 import FooterTest from "../components/ui/footer/footerTest"
 
 export default function App({ Component, pageProps }) {
