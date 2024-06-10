@@ -1,22 +1,21 @@
-import Navbar from "../components/Navbar";
-import "../styles/globals.css";
-import Chatbot from "../components/Chatbot";
+import { UserProvider } from './context/UserContext';
+import Navbar from '../components/Navbar';
+import Chatbot from '../components/Chatbot';
+import FooterTest from '../components/footer/FooterTest';
 import { useRouter } from 'next/router';
-import FooterTest from "../components/footer/footerTest";
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter();
-  const isDashboard = router.pathname.startsWith('/admin');
+    const router = useRouter();
+    const isDashboard = router.pathname.startsWith('/admin');
 
-  return (
-    <>
-      {!isDashboard && <Navbar />}
-      {!isDashboard && <Chatbot />}
-      <Component {...pageProps} />
-      <div style={{ backgroundColor: "#1C1C1C", width: "100%"}}>
-        <FooterTest />
-      </div>
-    </>
-  );
+    return (
+        <UserProvider>
+            {!isDashboard && <Navbar />}
+            {!isDashboard && <Chatbot />}
+            <Component {...pageProps} />
+            <div style={{ backgroundColor: "#1C1C1C", width: "100%" }}>
+                <FooterTest />
+            </div>
+        </UserProvider>
+    );
 }
- 

@@ -3,15 +3,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-const path = require('path');
-const axios = require('axios');
 
 const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/neoris', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/Neoris')
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
@@ -37,14 +35,13 @@ const userSchema = new mongoose.Schema({
     historial_preguntas_respuestas: [{
       pregunta: String,
       respuesta: String,
-      timestamp: Date
+      fecha: { type: Date, default: Date.now }
     }]
   }
 });
 
 const User = mongoose.model('Usuario', userSchema);
 
-// Define a counter schema to generate unique numeric IDs
 const counterSchema = new mongoose.Schema({
   _id: String,
   sequence_value: Number
@@ -52,7 +49,6 @@ const counterSchema = new mongoose.Schema({
 
 const Counter = mongoose.model('Counter', counterSchema);
 
-// Function to get the next sequence value for the specified key
 async function getNextSequenceValue(sequenceName) {
   const sequenceDocument = await Counter.findOneAndUpdate(
     { _id: sequenceName },
@@ -62,13 +58,11 @@ async function getNextSequenceValue(sequenceName) {
   return sequenceDocument.sequence_value;
 }
 
-// API to add a new user
 app.post('/api/signup', async (req, res) => {
   try {
-    const userId = await getNextSequenceValue('userId'); // Get the next numeric ID
-    console.log('Next user ID:', userId); // Log the next user ID
+    const userId = await getNextSequenceValue('userId');
+    console.log('Next user ID:', userId);
 
-    // Merge request data with default values for properties
     const userData = {
       _id: userId,
       nombre: req.body.name || '',
@@ -85,13 +79,20 @@ app.post('/api/signup', async (req, res) => {
       chat_bot: {
         pregunta_actual: '',
         respuesta_actual: '',
-        historial_preguntas_respuestas: []
+        historial_preguntas_respuestas: [
+          {
+            pregunta: '',
+            respuesta: '',
+            fecha: new Date()
+          },
+        ]
       }
     };
 
     const newUser = new User(userData);
     await newUser.save();
-    res.status(201).json({ message: 'User created successfully' });
+    const token = jwt.sign({ userId: newUser._id }, 'your_secret_key', { expiresIn: '1h' });
+    res.status(201).json({ message: 'User created successfully', userId: newUser._id, token });
   } catch (error) {
     console.error('Error creating user:', error);
     if (error.code === 11000 && error.keyPattern._id === 1) {
@@ -102,130 +103,27 @@ app.post('/api/signup', async (req, res) => {
   }
 });
 
-// API to get all users
-app.get('/users', (req, res) => {
-  User.find()
-    .then(users => res.json(users))
-    .catch(err => res.status(400).json('Error: ' + err));
-});
-
-// API to get a single user by ID
-app.get('/users/:id', (req, res) => {
-    User.findById(req.params.id)
-      .then(user => {
-        if (user) {
-          res.json(user);
-        } else {
-          res.status(404).json('User not found');
-        }
-      })
-      .catch(err => {
-        res.status(400).json('Error: ' + err);
-      });
-});
-
-// CRUD operations for users
-// Create User Endpoint (POST)
-app.post('/users', async (req, res) => {
-  try {
-    const userId = await getNextSequenceValue('userId'); // Get the next numeric ID
-    console.log('Next user ID:', userId); // Log the next user ID
-
-    // Merge request data with default values for properties
-    const userData = {
-      _id: userId,
-      nombre: req.body.nombre || '',
-      apellido: req.body.apellido || '',
-      correo: req.body.correo || '',
-      password: req.body.password || '',
-      sexo: req.body.sexo || '',
-      genero: req.body.genero || '',
-      edad: req.body.edad || 0,
-      localizacion: req.body.localizacion || '',
-      empleado: req.body.empleado || false,
-      rol_empleado: req.body.rol_empleado || null,
-      equipos_empleado: req.body.equipos_empleado || null,
-      chat_bot: {
-        pregunta_actual: '',
-        respuesta_actual: '',
-        historial_preguntas_respuestas: []
-      }
-    };
-
-    const newUser = new User(userData);
-    await newUser.save();
-    res.status(201).send(newUser);
-  } catch (error) {
-    res.status(400).send(error);
-  }
-});
-
-// Update an existing user
-app.put('/users/:id', async (req, res) => {
-  try {
-    const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
-    if (!user) {
-      return res.status(404).send();
-    }
-    res.send(user);
-  } catch (error) {
-    res.status(400).send(error);
-  }
-});
-
-// Delete a user
-app.delete('/users/:id', async (req, res) => {
-  try {
-    const user = await User.findByIdAndDelete(req.params.id);
-    if (!user) {
-      return res.status(404).send();
-    }
-    res.send(user);
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-const secretKey = 'neoris_secret_key';  
-
 app.post('/api/login', async (req, res) => {
-    const { username, password } = req.body;
-    
-    try {
-        const user = await User.findOne({ correo: username, password: password });
-        if (user) {
-            const token = jwt.sign(
-                { userId: user._id, username: user.correo },
-                secretKey,
-                { expiresIn: '1h' }
-            );
-            res.json({ token: token, message: 'Login successful' });
-        } else {
-            res.status(401).json({ message: 'Invalid username or password' });
-        }
-    } catch (error) {
-        res.status(500).json({ message: 'Server error' });
-        console.error('Login failed:', error);
-    }
-});
-
-const fs = require('fs');
-
-app.post('/api/chat', async (req, res) => {
-  const { user_id, message } = req.body;
-  console.log('Received message:', message, 'from user:', user_id);
+  const { username, password } = req.body;
 
   try {
-    const response = await axios.post('http://localhost:5000/api/chat', { user_id, message });
-    console.log('Chatbot response:', response.data);
-    res.json(response.data);  // Send the chatbot response to the client
+    const user = await User.findOne({ correo: username, password: password });
+    if (user) {
+      const token = jwt.sign(
+        { userId: user._id, username: user.correo },
+        'your_secret_key',
+        { expiresIn: '1h' }
+      );
+      res.json({ token: token, message: 'Login successful', userId: user._id });
+    } else {
+      res.status(401).json({ message: 'Invalid username or password' });
+    }
   } catch (error) {
-    console.error('Error calling Python server:', error);
-    res.status(500).send('Error communicating with chatbot server');
+    res.status(500).json({ message: 'Server error' });
+    console.error('Login failed:', error);
   }
 });
 
-const port = process.env.PORT || 5005;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(5005, () => {
+  console.log(`Server running on port 5005`);
 });
