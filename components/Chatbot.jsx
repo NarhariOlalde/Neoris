@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import TypingIndicator from './TypingIndicator';
-
-// Importa tu icono aquí
-import chatIcon from '../public/scb.jpeg'
-
+import chatIcon from '../public/scb.jpeg';
+import { useUser } from '../pages/context/UserContext'; // Import the useUser hook
 
 const Chatbot = () => {
     const [expanded, setExpanded] = useState(false);
@@ -14,6 +12,7 @@ const Chatbot = () => {
     const [canSend, setCanSend] = useState(true);
     const chatHistoryRef = useRef(null);
     const latestMessageRef = useRef(null);
+    const { user } = useUser(); // Get the user state from the context
 
     const handleToggle = () => {
         setExpanded(!expanded);
@@ -27,7 +26,6 @@ const Chatbot = () => {
         e.stopPropagation();
         e.preventDefault();
 
-        // Verificar si el mensaje no está vacío antes de enviarlo
         if (inputText.trim() === '') {
             alert('Please enter a message');
             return;
@@ -40,7 +38,10 @@ const Chatbot = () => {
         setCanSend(false);
 
         try {
-            const response = await axios.post('http://127.0.0.1:5000/api/chat', { message: inputText });
+            const response = await axios.post('http://127.0.0.1:5000/api/chat', {
+                user_id: user.userId, // Use userId from context
+                message: inputText
+            });
             const chatbotResponse = { sender: 'Chatbot', message: response.data.response };
             setChatHistory((prevChatHistory) => [...prevChatHistory, chatbotResponse]);
         } catch (error) {
@@ -78,9 +79,8 @@ const Chatbot = () => {
                 padding: '10px',
                 zIndex: 10000
             }}
-            onClick={!expanded ? handleToggle : undefined} // Solo permite abrir el chatbot al hacer clic en el contenedor
+            onClick={!expanded ? handleToggle : undefined}
         >
-            {/* Usar un icono cuando esté cerrado */}
             {!expanded && <img src={chatIcon} style={{ width: '30px', height: '30px', marginBottom: '10px' }} alt="Chatbot" />}
 
             <div

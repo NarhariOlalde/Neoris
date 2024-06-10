@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
     historial_preguntas_respuestas: [{
       pregunta: String,
       respuesta: String,
-      timestamp: Date
+      fecha: { type: Date, default: Date.now } 
     }]
   }
 });

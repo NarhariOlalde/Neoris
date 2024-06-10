@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useUser } from '../pages/context/UserContext';
 
-// Historia #2
-// Título: Crear página de registro (Sign Up) con conexión a la API
 function SignUp() {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
@@ -11,6 +10,7 @@ function SignUp() {
     const [gender, setGender] = useState('');
     const [age, setAge] = useState('');
     const [password, setPassword] = useState('');
+    const { setUser } = useUser();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -26,10 +26,12 @@ function SignUp() {
             });
             if (data.message === 'User created successfully') {
                 localStorage.setItem('token', data.token);
-                localStorage.setItem('email', email); // Store email
+                localStorage.setItem('email', email);
+                setUser({ userId: data.userId });
+                console.log('Signed up user:', data.userId);
                 window.location.href = '/'; // Redirect to homepage
             } else {
-                alert('Sign up failed: ' + data.message); // Show failure message from server
+                alert('Sign up failed: ' + data.message);
             }
         } catch (error) {
             alert('Sign up failed: ' + (error.response ? error.response.data.message : 'Server error'));
