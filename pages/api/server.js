@@ -3,15 +3,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-const path = require('path');
-const axios = require('axios');
 
 const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/neoris', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/Neoris')
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
@@ -37,14 +35,13 @@ const userSchema = new mongoose.Schema({
     historial_preguntas_respuestas: [{
       pregunta: String,
       respuesta: String,
-      timestamp: Date
+      fecha: { type: Date, default: Date.now }
     }]
   }
 });
 
 const User = mongoose.model('Usuario', userSchema);
 
-// Define a counter schema to generate unique numeric IDs
 const counterSchema = new mongoose.Schema({
   _id: String,
   sequence_value: Number
@@ -52,7 +49,6 @@ const counterSchema = new mongoose.Schema({
 
 const Counter = mongoose.model('Counter', counterSchema);
 
-// Function to get the next sequence value for the specified key
 async function getNextSequenceValue(sequenceName) {
   const sequenceDocument = await Counter.findOneAndUpdate(
     { _id: sequenceName },
@@ -62,13 +58,11 @@ async function getNextSequenceValue(sequenceName) {
   return sequenceDocument.sequence_value;
 }
 
-// API to add a new user
 app.post('/api/signup', async (req, res) => {
   try {
-    const userId = await getNextSequenceValue('userId'); // Get the next numeric ID
-    console.log('Next user ID:', userId); // Log the next user ID
+    const userId = await getNextSequenceValue('userId');
+    console.log('Next user ID:', userId);
 
-    // Merge request data with default values for properties
     const userData = {
       _id: userId,
       nombre: req.body.name || '',
@@ -85,13 +79,20 @@ app.post('/api/signup', async (req, res) => {
       chat_bot: {
         pregunta_actual: '',
         respuesta_actual: '',
-        historial_preguntas_respuestas: []
+        historial_preguntas_respuestas: [
+          {
+            pregunta: '',
+            respuesta: '',
+            fecha: new Date()
+          },
+        ]
       }
     };
 
     const newUser = new User(userData);
     await newUser.save();
-    res.status(201).json({ message: 'User created successfully' });
+    const token = jwt.sign({ userId: newUser._id }, 'your_secret_key', { expiresIn: '1h' });
+    res.status(201).json({ message: 'User created successfully', userId: newUser._id, token });
   } catch (error) {
     console.error('Error creating user:', error);
     if (error.code === 11000 && error.keyPattern._id === 1) {
@@ -192,43 +193,26 @@ const secretKey = 'neoris_secret_key';
 
 app.post('/api/login', async (req, res) => {
   const { username, password } = req.body;
-  
+
   try {
-      const user = await User.findOne({ correo: username, password: password });
-      if (user) {
-          const token = jwt.sign(
-              { userId: user._id, username: user.correo },
-              secretKey,
-              { expiresIn: '1h' }
-          );
-          res.json({ token: token, userId: user._id, message: 'Login successful' }); // Include userId in response
-      } else {
-          res.status(401).json({ message: 'Invalid username or password' });
-      }
+    const user = await User.findOne({ correo: username, password: password });
+    if (user) {
+      const token = jwt.sign(
+        { userId: user._id, username: user.correo },
+        'your_secret_key',
+        { expiresIn: '1h' }
+      );
+      res.json({ token: token, message: 'Login successful', userId: user._id });
+    } else {
+      res.status(401).json({ message: 'Invalid username or password' });
+    }
   } catch (error) {
-      res.status(500).json({ message: 'Server error' });
-      console.error('Login failed:', error);
+    res.status(500).json({ message: 'Server error' });
+    console.error('Login failed:', error);
   }
 });
 
 
-const fs = require('fs');
-
-app.post('/api/chat', async (req, res) => {
-  const { user_id, message } = req.body;
-  console.log('Received message:', message, 'from user:', user_id);
-
-  try {
-    const response = await axios.post('http://localhost:5000/api/chat', { user_id, message });
-    console.log('Chatbot response:', response.data);
-    res.json(response.data);  // Send the chatbot response to the client
-  } catch (error) {
-    console.error('Error calling Python server:', error);
-    res.status(500).send('Error communicating with chatbot server');
-  }
-});
-
-const port = process.env.PORT || 5005;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(5005, () => {
+  console.log(`Server running on port 5005`);
 });
