@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './Footer.module.css'; // Assuming you convert CSS to a module
 import Image from 'next/image';
-import logo from '../../public/logo_neoris_white.png'
+import logo from '/public/logo_neoris_white.png'
 
 const FooterTest = () => {
   useEffect(() => {

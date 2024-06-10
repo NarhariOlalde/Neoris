@@ -1,8 +1,8 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navigation/navbar/Navbar";
 import "../styles/globals.css";
-import Chatbot from "../components/Chatbot";
+import Chatbot from "../components/ui/chatbot/Chatbot";
 import { useRouter } from 'next/router';
-import FooterTest from "../components/footer/footerTest";
+import FooterTest from "../components/ui/footer/footerTest"
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();

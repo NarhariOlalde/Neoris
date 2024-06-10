@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import { useRouter } from 'next/router';
-import styles from '../styles/CustomButton.module.css';
+import styles from './CustomButton.module.css';
 
 const CustomButton = ({ href, children, color = 'primary', variant = 'contained', onClick, transparent }) => {
   const router = useRouter();

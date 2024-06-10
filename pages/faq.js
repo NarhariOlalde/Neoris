@@ -1,5 +1,5 @@
 import React from "react";
-import FaqAccordion from "../components/faqAccordion/faqAccordion";
+import FaqAccordion from "../components/ui/faqAccordion/faqAccordion";
 import { Margin } from "@mui/icons-material";
 
 const Faq = () => {

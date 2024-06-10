@@ -255,7 +255,9 @@ const UserTable = () => {
   ];
 
   return (
-    <Box m="20px">
+    <Box m="20px"
+      style={{ with: '50%'}}
+    >
       <Header title="User Tables" subtitle="Manage all users" />
       <Button
         startIcon={<AddIcon />}

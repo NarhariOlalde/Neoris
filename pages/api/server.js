@@ -124,6 +124,8 @@ app.get('/users/:id', (req, res) => {
       });
 });
 
+// API to get a user's ID by token
+
 // CRUD operations for users
 // Create User Endpoint (POST)
 app.post('/users', async (req, res) => {
@@ -189,25 +191,26 @@ app.delete('/users/:id', async (req, res) => {
 const secretKey = 'neoris_secret_key';  
 
 app.post('/api/login', async (req, res) => {
-    const { username, password } = req.body;
-    
-    try {
-        const user = await User.findOne({ correo: username, password: password });
-        if (user) {
-            const token = jwt.sign(
-                { userId: user._id, username: user.correo },
-                secretKey,
-                { expiresIn: '1h' }
-            );
-            res.json({ token: token, message: 'Login successful' });
-        } else {
-            res.status(401).json({ message: 'Invalid username or password' });
-        }
-    } catch (error) {
-        res.status(500).json({ message: 'Server error' });
-        console.error('Login failed:', error);
-    }
+  const { username, password } = req.body;
+  
+  try {
+      const user = await User.findOne({ correo: username, password: password });
+      if (user) {
+          const token = jwt.sign(
+              { userId: user._id, username: user.correo },
+              secretKey,
+              { expiresIn: '1h' }
+          );
+          res.json({ token: token, userId: user._id, message: 'Login successful' }); // Include userId in response
+      } else {
+          res.status(401).json({ message: 'Invalid username or password' });
+      }
+  } catch (error) {
+      res.status(500).json({ message: 'Server error' });
+      console.error('Login failed:', error);
+  }
 });
+
 
 const fs = require('fs');
 

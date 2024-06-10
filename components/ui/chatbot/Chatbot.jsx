@@ -3,7 +3,7 @@ import axios from 'axios';
 import TypingIndicator from './TypingIndicator';
 
 // Importa tu icono aquí
-import chatIcon from '../public/scb.jpeg'
+import chatIcon from '/public/scb.jpeg'
 
 
 const Chatbot = () => {

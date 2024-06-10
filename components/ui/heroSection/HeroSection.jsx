@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '../styles/HeroSection.module.css';
-import CustomButton from './CustomButton';
+import styles from './HeroSection.module.css';
+import CustomButton from '../button/CustomButton';
 
 function HeroSection() {
   return (

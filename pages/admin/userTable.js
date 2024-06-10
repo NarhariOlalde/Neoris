@@ -1,6 +1,6 @@
 import React from 'react';
 import SideNavigation from '../../components/SideNavigation';
-import UserTable from '../../components/UserTable';
+import UserTable from '../../components/admin_components/UserTable';
 
 const UserTablePage = () => {
     return (
