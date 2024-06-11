@@ -64,7 +64,7 @@ app.post('/api/signup', async (req, res) => {
     console.log('Next user ID:', userId);
 
     const userData = {
-      _id: userId,
+      _id: req.body._id || userId,
       nombre: req.body.name || '',
       apellido: req.body.lastName || '',
       correo: req.body.email || '',

@@ -20,7 +20,7 @@ export const UserProvider = ({ children }) => {
         if (typeof window !== 'undefined' && user) {
             localStorage.setItem('user', JSON.stringify(user));
         } else if (typeof window !== 'undefined') {
-            //localStorage.removeItem('user');
+            //localStorage.removeItem('user'); 
         }
     }, [user]);
 

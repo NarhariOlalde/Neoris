@@ -65,7 +65,7 @@ const Navbar = () => {
                     <div>
                         <NavItem text="FAQ" href="/faq" />
                     </div>
-                    {isUserLoggedIn && isAdmin && (
+                    {isUserLoggedIn && (
                         <div>
                             <NavItem text="Admin Dashboard" href="/admin/adminDashboard" />
                         </div>

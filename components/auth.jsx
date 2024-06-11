@@ -24,22 +24,23 @@ const withAdminAuth = (WrappedComponent) => {
             console.log('User ID:', userId);
 
             if (!userId) {
-              router.push('/login');
+              router.push('/');
+              
               return;
             }
 
-            const response = await api.get(`/check-admin/${userId}`);
+            const response = await api.get(`check-admin/${userId}`);
             const isAdmin = response.data.isAdmin;
             if (!isAdmin) {
-              router.push('/login');
+              router.push('/');
             }
           } catch (error) {
             console.error('Error checking admin authentication:', error);
-            router.push('/login');
+            router.push('/');
           }
         } else {
           console.log("Stored user is null or empty.");
-          router.push('/login');
+          router.push('/l');
         }
       };
 
