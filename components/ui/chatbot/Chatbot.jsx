@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import TypingIndicator from './TypingIndicator';
+import { useUser } from '../../../pages/context/UserContext'; 
 
 // Importa tu icono aquí
 import chatIcon from '/public/scb.jpeg'
@@ -14,6 +15,7 @@ const Chatbot = () => {
     const [canSend, setCanSend] = useState(true);
     const chatHistoryRef = useRef(null);
     const latestMessageRef = useRef(null);
+    const { user } = useUser(); 
 
     const handleToggle = () => {
         setExpanded(!expanded);
@@ -40,7 +42,10 @@ const Chatbot = () => {
         setCanSend(false);
 
         try {
-            const response = await axios.post('http://127.0.0.1:5000/api/chat', { message: inputText });
+            const response = await axios.post('http://127.0.0.1:5000/api/chat', {
+                user_id: user.userId, 
+                message: inputText
+            });
             const chatbotResponse = { sender: 'Chatbot', message: response.data.response };
             setChatHistory((prevChatHistory) => [...prevChatHistory, chatbotResponse]);
         } catch (error) {
