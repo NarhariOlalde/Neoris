@@ -120,8 +120,8 @@ const Chatbot = () => {
             }}
             onClick={!expanded ? handleToggle : undefined} // Solo permite abrir el chatbot al hacer clic en el contenedor
         >
-            {/* Usar un icono cuando esté cerrado
-            {!expanded && <img src={chatIcon} style={{ width: '30px', height: '30px', marginBottom: '10px' }} alt="Chatbot" />} */}
+            {/* Usar un icono cuando esté cerrado */}
+            {!expanded && <img src={'/scb.jpeg'} style={{ width: '33px', height: '33px', marginBottom: '10px' }} alt="Chatbot" />}
 
             <div
                 ref={chatHistoryRef}
