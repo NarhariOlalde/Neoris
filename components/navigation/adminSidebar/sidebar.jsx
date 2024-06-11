@@ -23,9 +23,6 @@ const Sidebar = () => {
                     <img src="/logo_neoris_white.png" alt="Logo" className={styles.logo} />
                     <h1 className={styles.hide}>Neoris Admin</h1>
                 </Link>
-                <div className={styles.expandBtn} onClick={handleCollapse}>
-                    <img src="/chevron.svg" alt="Chevron" />
-                </div>
             </div>
             <div className={styles.sidebarLinks}>
                 <ul>

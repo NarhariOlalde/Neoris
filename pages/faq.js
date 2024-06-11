@@ -3,7 +3,7 @@ import FaqAccordion from "../components/ui/faqAccordion/faqAccordion";
 import { Margin } from "@mui/icons-material";
 
 const Faq = () => {
-  return (
+  return (    
     <><h1 className='faq'>FAQ</h1>
     <div className="faq-container">
       <h2 className="faq-heading">Frequently Asked Questions</h2>
@@ -17,8 +17,8 @@ const Faq = () => {
         <FaqAccordion />
       </div>
     </div>
-    
-        
+
+
     </>
   );
 };

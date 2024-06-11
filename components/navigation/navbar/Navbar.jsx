@@ -1,29 +1,44 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import NavItem from "./NavItem";
+import axios from 'axios';
+
+const api = axios.create({
+    baseURL: 'http://localhost:5005/api/', // Set your base URL here
+});
 
 const Navbar = () => {
     const [username, setUsername] = useState(null);
+    const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
         setUsername(localStorage.getItem('username'));
+        checkAdminStatus();
     }, []);
+
+    const checkAdminStatus = async () => {
+        if (!username) return;
+        try {
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+            const userId = storedUser.userId;
+            const response = await api.get(`/check-admin/${userId}`);
+            console.log('isAdmin Response:', response.data);
+            setIsAdmin(response.data);
+        } catch (error) {
+            console.error('Error checking admin status:', error);
+        }
+    };
+
+    const handleLogout = () => {
+        // Clear local storage and redirect to logout
+        localStorage.removeItem('username');
+        window.location.href = "/";
+    };
 
     const isUserLoggedIn = username !== null;
 
-    const MENU_LIST = [
-        {
-            text: "Home",
-            href: "/",
-        }, {
-            text: "FAQ",
-            href: "/faq",
-        }, {
-            text: username || "Log-in", // Display username if exists, else display "Log-in"
-            href: isUserLoggedIn ? "/" : "/log-in", // If user is logged in, link to home page, else link to log-in page
-            style: isUserLoggedIn ? { backgroundColor: "black", color: "white", padding: "5px 10px", borderRadius: "5px" } : {}, // Apply inline style if user is signed in
-        },
-    ];
+    console.log('Is User Logged In:', isUserLoggedIn);
+    console.log('Is Admin:', isAdmin);
 
     return (
         <header>
@@ -39,11 +54,38 @@ const Navbar = () => {
                 </div>
 
                 <div className="nav__menu-list">
-                    {MENU_LIST.map((menu, idx) => (
-                        <div key={menu.text}>
-                            <NavItem {...menu} />
+                    <div>
+                        <NavItem text="Home" href="/" />
+                    </div>
+                    <div>
+                        <NavItem text="FAQ" href="/faq" />
+                    </div>
+                    {isUserLoggedIn && isAdmin && (
+                        <div>
+                            <NavItem text="Admin Dashboard" href="/admin/adminDashboard" />
                         </div>
-                    ))}
+                    )}
+                    <div>
+                        {isUserLoggedIn ? (
+                            <button 
+                                className="nav__menu-item" 
+                                onClick={handleLogout}
+                                style={{ 
+                                    backgroundColor: "black", 
+                                    color: "white", 
+                                    padding: "5px 10px", 
+                                    borderRadius: "5px",
+                                    cursor: "pointer"
+                                }}
+                            >
+                                Log Out
+                            </button>
+                        ) : (
+                            <div>
+                                <NavItem text="Log In" href="/log-in" />
+                            </div>
+                        )}
+                    </div>
                 </div>
             </nav>
         </header>

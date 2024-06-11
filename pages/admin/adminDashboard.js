@@ -1,6 +1,9 @@
 import React from "react";
 import UserTable from "../../components/admin_components/UserTable";
 import Sidebar from "../../components/navigation/adminSidebar/sidebar";
+import withAdminAuth from '../../components/auth';
+
+
 
 const AdminDashboard = () => {
   return (
@@ -15,4 +18,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default withAdminAuth(AdminDashboard);

@@ -11,6 +11,7 @@ export default function App({ Component, pageProps }) {
 
     return (
         <UserProvider>
+
             {!isDashboard && <Navbar />}
             {!isDashboard && <Chatbot />}
             <Component {...pageProps} />
