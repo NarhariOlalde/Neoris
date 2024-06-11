@@ -32,6 +32,11 @@ const Navbar = () => {
     const handleLogout = () => {
         // Clear local storage and redirect to logout
         localStorage.removeItem('username');
+        localStorage.removeItem('user');
+        localStorage.removeItem('email');
+        localStorage.removeItem('token');
+
+
         window.location.href = "/";
     };
 

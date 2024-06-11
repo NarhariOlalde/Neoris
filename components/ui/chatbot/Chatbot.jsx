@@ -106,7 +106,7 @@ const Chatbot = () => {
                 right: '20px',
                 width: expanded ? '450px' : '50px',
                 height: expanded ? '550px' : '50px',
-                backgroundColor: expanded ? '#f0f0f0' : 'blue',
+                backgroundColor: expanded ? '#f0f0f0' : 'white',
                 borderRadius: expanded ? '20px' : '50%',
                 display: 'flex',
                 flexDirection: 'column',
@@ -120,8 +120,8 @@ const Chatbot = () => {
             }}
             onClick={!expanded ? handleToggle : undefined} // Solo permite abrir el chatbot al hacer clic en el contenedor
         >
-            {/* Usar un icono cuando esté cerrado */}
-            {!expanded && <img src={chatIcon} style={{ width: '30px', height: '30px', marginBottom: '10px' }} alt="Chatbot" />}
+            {/* Usar un icono cuando esté cerrado
+            {!expanded && <img src={chatIcon} style={{ width: '30px', height: '30px', marginBottom: '10px' }} alt="Chatbot" />} */}
 
             <div
                 ref={chatHistoryRef}

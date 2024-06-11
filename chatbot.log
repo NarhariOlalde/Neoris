@@ -297,3 +297,41 @@ INFO:root:Received history request from user_id: 1
 INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:47:45] "POST /api/chat/chathistory HTTP/1.1" 200 -
 INFO:root:Received history request from user_id: 1
 INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:47:46] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:44:54] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: Hola!!!!! from user_id: 1
+INFO:root:Generated response: ¡Hola! Me alegra poder ayudarte con cualquier pregunta o necesidad que tengas en relación con NEORIS. ¿En qué puedo ayudarte hoy? (Hello! I'm happy to help you with any question or need you may have regarding Neoris. How can I assist you today?)
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:45:24] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:45:27] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:45:27] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:46:43] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: Hola from user_id: 1
+INFO:root:Generated response: ¡Hola! Me alegra poder ayudarte con cualquier pregunta o necesidad relacionada con Neoris. ¿En qué puedo apoyarle hoy?
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:47:07] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:52:17] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: ola from user_id: 2
+INFO:root:Generated response: Hola! I'm happy to assist you with any questions or concerns regarding NEORIS products and services. Please feel free to ask, and I'll do my best to provide helpful information. ¿En qué puedo ayudarte? (What can I help you with?)
+INFO:root:Chat history updated for user_id: 2
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:52:46] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:53:01] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 2
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:53:01] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:53:25] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: Que productos ofrecen? from user_id: 2
+INFO:root:Generated response: En Neoris, ofrecemos una amplia gama de productos y servicios en el ámbito de la tecnología y los sistemas de información. Entre nuestros productos y servicios destacamos:
+
+* Desarrollo de plataformas digitales y productos (móvil y web)
+* Transformación de plataformas de software client para un ecosistema digital
+* Desarrollo y integración de API
+* Ingeniería de calidad
+
+Además, nos especializamos en crear plataformas B2B que pueden ser fácilmente integradas con socios, lo que optimiza el gasto operativo al digitizar y automatizar los procesos.
+
+Espero que esta información te sea útil. ¡Si necesitas más ayuda o tienes alguna pregunta adicional, no dudes en preguntar!
+INFO:root:Chat history updated for user_id: 2
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:53:58] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:54:04] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 2
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:54:04] "POST /api/chat/chathistory HTTP/1.1" 200 -
