@@ -4,6 +4,7 @@ import Chatbot from '../components/ui/chatbot/Chatbot';
 import { useRouter } from 'next/router';
 import "../styles/globals.css";
 import FooterTest from "../components/ui/footer/footerTest"
+import Services from '../components/ui/Services/Services';
 
 export default function App({ Component, pageProps }) {
     const router = useRouter();

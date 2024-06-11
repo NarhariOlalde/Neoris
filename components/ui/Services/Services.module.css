@@ -1,0 +1,98 @@
+/* Services.module.css */
+
+.heroWrapper {
+  padding: 50px 0;
+  background: linear-gradient(to bottom right, #2f24cb, #000000);
+  color: #000000;
+}
+
+.heroContainer {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.heroContainer > h1 {
+  color: #fff;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.servicesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 8000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.serviceCard {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: calc(33.333% - 30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.serviceCard h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.serviceCard ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.serviceCard li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.serviceCard li::before {
+  content: "•";
+  color: #9e34db;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 960px) {
+  .serviceCard {
+    width: calc(50% - 30px);
+  }
+
+  .heroContainer > h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .serviceCard {
+    width: calc(100% - 30px);
+  }
+
+  .heroContainer > h1 {
+    font-size: 2rem;
+  }
+
+  .serviceCard h2 {
+    font-size: 1.25rem;
+  }
+
+  .serviceCard li {
+    font-size: 0.875rem;
+  }
+}

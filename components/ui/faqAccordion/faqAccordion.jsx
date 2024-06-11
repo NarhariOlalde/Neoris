@@ -73,31 +73,63 @@ const FaqAccordion = () => {
 
   const faqs = [
     {
-      question: 'How long does the course take?',
-      answer:
-        'The video content takes more than 4.5 hours. In addition, you can test gained knowledge on 30 quizzes and practical tasks.',
+        question: 'What is the NEORIS Data & AI Lab?',
+        answer: 'The NEORIS Data & AI Lab accelerates the transformation of organizations by focusing on areas where artificial intelligence has a more differential and large-scale impact, making rational and responsible use of data.'
     },
     {
-      question: 'Who teaches courses on Atheros Learning?',
-      answer:
-        'The authors of the courses are mostly Atheros team members, who worked on tens of digital solutions for big international companies, projects for small startups, and internal Atheros products. By solving the most sophisticated problems in the fields, they gained proper knowledge, which is now available for you.',
+        question: 'How does NEORIS facilitate Business Translation?',
+        answer: 'NEORIS identifies improvement opportunities by acting as a bridge between business units and analytical teams.'
     },
     {
-      question: 'How is the course different from other UX/UI design courses?',
-      answer:
-        'The key aspect is that this course provides a clear overview of the whole design process and principles, that represent necessary information for being successful within the industry. You will also get direct support from the author of this course, who is ready to answer all your questions and care about your next steps.',
+        question: 'What services does NEORIS offer in the Engineering and Development area?',
+        answer: 'NEORIS deploys artificial intelligence solutions, integrates them into applications, and ensures their ongoing maintenance.'
     },
     {
-      question: 'Do I get a certificate after completing a course?',
-      answer:
-        'Yes, after successfully finishing the quizzes within the course, you can download a certificate, proving all gained knowledge and skills.',
+        question: 'What is the NEORIS Knowledge Discovery Platform (KDP)?',
+        answer: 'The KDP is an intelligent document processing platform that uses AI techniques like deep learning, natural language processing, computer vision, and semantic understanding to digitize complex documents in seconds.'
     },
     {
-      question: 'Are there any hidden fees within the course?',
-      answer:
-        'Absolutely not! You will gain all benefits and features with the one-time payment, unlocking the course.',
+        question: 'What are some use cases for the NEORIS KDP?',
+        answer: 'The KDP is used in cases such as balance sheets, financial statements, policies, contracts, forms, mortgages, and real estate.'
     },
-  ];
+    {
+        question: 'How does NEORIS transform the customer and employee experience?',
+        answer: 'NEORIS digitizes the customer experience across all channels, creates digital products, provides real-time digital insights, and measures the digital journey across the value chain.'
+    },
+    {
+        question: 'What is NEORIS Digital Enablement?',
+        answer: 'NEORIS Digital Enablement transforms the customer and employee experience end-to-end, creating digital products, insights, and optimizing operations for real-time decision-making.'
+    },
+    {
+        question: 'What services are included in NEORIS Big Data & Analytics, AI & Data Science?',
+        answer: 'Services include data strategy, data architecture, data engineering, data science, data visualization, and AI & machine learning knowledge discovery.'
+    },
+    {
+        question: 'What is NEORIS Digital Product Development?',
+        answer: 'NEORIS Digital Product Development includes creating digital platforms and products, transforming client software platforms into digital ecosystems, and integrating APIs.'
+    },
+    {
+        question: 'What does NEORIS Quality Engineering encompass?',
+        answer: 'NEORIS Quality Engineering offers testing consultancy, digital testing, automated testing, performance testing, traditional testing, and specialized testing.'
+    },
+    {
+        question: 'What is NEORIS User Experience (UX) Design?',
+        answer: 'NEORIS UX Design involves user research, interface design workflows, usability testing, customer research, and product design from inception to launch.'
+    },
+    {
+        question: 'What services does NEORIS offer in Cloud, Integration, Digital & Enterprise Architecture?',
+        answer: 'Services include digital platform architecture, cloud architecture, digital integration & API management, and enterprise architecture & IT consulting.'
+    },
+    {
+        question: 'What is NEORIS Operations Transformation?',
+        answer: 'NEORIS Operations Transformation helps clients optimize processes, design lean operating models, implement intelligent process automation, and manage transformation programs.'
+    },
+    {
+        question: 'What is included in NEORIS Run & Operate services?',
+        answer: 'Run & Operate services include applications and infrastructure support, digital observability, IT transformation, and value-added reseller (VAR) services for SAP ERPs.'
+    },
+];
+
 
   return (
     <div style={faqContainerStyle}>

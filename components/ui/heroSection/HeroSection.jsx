@@ -10,7 +10,6 @@ function HeroSection() {
         <h1>NEORIS</h1>
         <p>Digital Business Transformation Accelerator</p>
         <div className={styles.herobtns}>
-          <CustomButton href="/services" transparent>Services</CustomButton>
           <CustomButton href="/sign-up">Sign up</CustomButton>
         </div>
       </div>

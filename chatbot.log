@@ -335,3 +335,16 @@ INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:53:58] "POST /api/chat HTTP/1.1" 200
 INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:54:04] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
 INFO:root:Received history request from user_id: 2
 INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 15:54:04] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:faiss.loader:Loading faiss with AVX512 support.
+INFO:faiss.loader:Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+INFO:faiss.loader:Loading faiss with AVX2 support.
+INFO:faiss.loader:Successfully loaded faiss with AVX2 support.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
