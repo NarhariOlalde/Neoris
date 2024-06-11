@@ -189,6 +189,26 @@ app.delete('/users/:id', async (req, res) => {
   }
 });
 
+// API endpoint to check if a user is an admin
+app.get('/api/check-admin/:id', async (req, res) => {
+  const userId = req.params.id;
+
+  try {
+    const user = await User.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    const isAdmin = user.rol_empleado === 'admin';
+
+    res.json({ isAdmin });
+  } catch (error) {
+    console.error('Error fetching user:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
 const secretKey = 'neoris_secret_key';  
 
 app.post('/api/login', async (req, res) => {
