@@ -57,6 +57,41 @@ const Chatbot = () => {
         }
     };
 
+    const handleChatHistory = async () => {
+        try {
+            const response = await axios.post('http://127.0.0.1:5000/api/chat/chathistory', {
+                user_id: user.userId,
+            });
+            const { Previous_questions, Previous_responses } = response.data;
+    
+            const historyMessages = [...chatHistory]; // Copia el historial de chat existente
+    
+            const maxLength = Math.max(Previous_questions.length, Previous_responses.length);
+    
+            for (let i = 0; i < maxLength; i++) {
+                if (Previous_questions[i]) {
+                    historyMessages.push({
+                        sender: 'You',
+                        message: Previous_questions[i],
+                    });
+                }
+                if (Previous_responses[i]) {
+                    historyMessages.push({
+                        sender: 'Chatbot',
+                        message: Previous_responses[i],
+                    });
+                }
+            }
+    
+            setChatHistory(historyMessages);
+        } catch (error) {
+            console.error('Error fetching chat history:', error);
+            alert('Error fetching chat history, please try again.');
+        }
+    };
+    
+    
+
     useEffect(() => {
         if (latestMessageRef.current) {
             latestMessageRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -150,11 +185,22 @@ const Chatbot = () => {
                 <div
                     onClick={(e) => {
                         e.stopPropagation();
+                        handleChatHistory(); // Llama a la función handleChatHistory al hacer clic
+                    }}
+                    style={{ cursor: 'pointer', marginTop: '10px', color: '#007bff' }}
+                >
+                    Mostrar Historial del Chatbot
+                </div>
+            )}
+            {expanded && (
+                <div
+                    onClick={(e) => {
+                        e.stopPropagation();
                         handleToggle();
                     }}
                     style={{ cursor: 'pointer', marginTop: '10px', color: '#007bff' }}
                 >
-                    Close
+                    Cerrar
                 </div>
             )}
         </div>

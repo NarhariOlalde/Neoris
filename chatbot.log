@@ -4,3 +4,296 @@ INFO:faiss.loader:Loading faiss.
 INFO:faiss.loader:Successfully loaded faiss.
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 114-703-788
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 09:41:21] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: Hola! from user_id: 1
+INFO:root:Generated response: ¡Hola! Soy un chatbot de NEORIS, a tu disposición para brindarte información y asistencia sobre nuestros productos y servicios. ¿En qué puedo ayudarte hoy?
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 09:42:13] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 09:43:55] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: What is Neoris? from user_id: 1
+INFO:root:Generated response: Neoris is a leading provider of IT solutions and services, offering a wide range of products and platforms to transform businesses and improve customer experiences. Their offerings include the Data & AI Lab, Knowledge Discovery Platform (KDP), and Digital Enablement solutions, among others. With a technology-agnostic approach, Neoris aims to add value to their customers by leveraging the best technologies available.
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 09:44:24] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 09:45:00] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: Que servicios tienen actualmente? from user_id: 1
+INFO:root:Generated response: Actualmente, NEORIS ofrece un portafolio de servicios que incluye el soporte a aplicaciones e infraestructura, lo que implica atención y resolución de solicitudes de servicio, incidentes, problemas, cambios y mejoras. Además, también proporciona soluciones personalizadas para nuestros clientes mediante nuestra capacidad como proveedor de plataforma como servicio (PaaS).
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 09:45:40] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/cleberp/Documents/SextoSemestre/prueba6web/Neoris/pages/api/server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 10:05:50] "[33mGET /api/chat/history/1 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 10:05:50] "[33mGET /api/chat/history/1 HTTP/1.1[0m" 404 -
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 10:13:34] "[33mGET /api/chat/history/1 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 10:13:44] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: Hola? from user_id: 1
+INFO:root:Generated response: ¡Hola! Soy un chatbot AI-powered diseñado para proporcionarte información y asistencia como parte de NEORIS. ¿En qué puedo ayudarte hoy?
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 10:14:20] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 10:14:30] "[33mGET /api/chat/history/1 HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/Users/cleberp/Documents/SextoSemestre/prueba6web/Neoris/pages/api/server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 10:36:34] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: What are neoris social media? from user_id: 1
+INFO:root:Generated response: As a NEORIS digital enablement platform, we focus on transforming the customer and employee experience through innovative technology solutions.
+
+Regarding your question, I couldn't find any information about "neoris social media" within our provided context. As NEORIS is primarily a technology company that provides various products and services to its customers, it seems they don't have a specific offering or platform focused solely on social media.
+
+If you're looking for more general information on NEORIS' digital enablement capabilities or their other offerings, please feel free to ask!
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 10:37:54] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/cleberp/Documents/SextoSemestre/prueba6web/Neoris/pages/api/server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 11:01:11] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: Hola! from user_id: 1
+INFO:root:Generated response: ¡Hola! Bienvenido a NEORIS, donde ofrecemos una amplia variedad de productos y servicios para satisfacer tus necesidades específicas. ¿En qué podemos ayudarte hoy?
+INFO:root:Chat history updated for user_id: 1
+ERROR:root:Error occurred: Object of type ObjectId is not JSON serializable
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 11:01:43] "[35m[1mPOST /api/chat HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/Users/cleberp/Documents/SextoSemestre/prueba6web/Neoris/pages/api/server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:werkzeug: * Detected change in '/Users/cleberp/Documents/SextoSemestre/prueba6web/Neoris/pages/api/server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:werkzeug: * Detected change in '/Users/cleberp/Documents/SextoSemestre/prueba6web/Neoris/pages/api/server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 11:15:18] "[33mGET /api/chat/history?user_id=1 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 11:15:25] "[33mGET /api/chat/history?user_id=1 HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/Users/cleberp/Documents/SextoSemestre/prueba6web/Neoris/pages/api/server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 11:20:23] "[33mGET /api/chat/history?user_id=1 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 11:20:33] "[33mGET /api/chat/history?user_id=1 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 11:20:39] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: Hola? from user_id: 1
+INFO:root:Generated response: ¡Hola! Estoy aquí para ayudarte con cualquier pregunta o inquietud relacionada con NEORIS. ¿En qué puedo ayudarte hoy?
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 11:21:08] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 11:21:13] "[33mGET /api/chat/history?user_id=1 HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/Users/cleberp/Documents/SextoSemestre/prueba6web/Neoris/pages/api/server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:werkzeug: * Detected change in '/Users/cleberp/Documents/SextoSemestre/prueba6web/Neoris/pages/api/server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:16:59] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:16:59] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:root:Received question: Hola? from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:16:59] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Generated response: ¡Hola! Soy un chatbot de NEORIS, estoy aquí para ayudarte con tus preguntas y necesidades. ¿En qué puedo asistirte hoy?
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:17:27] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:20:17] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:20:17] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:20:24] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:20:24] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:20:33] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:20:33] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:21:08] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:21:08] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:21:14] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:21:14] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:21:17] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:21:18] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:22:17] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:22:17] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:22:30] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: Que es Neoris? from user_id: 1
+INFO:root:Generated response: NEORIS es un laboratorio de datos y inteligencia artificial que se centra en brindar soluciones innovadoras para transformar la experiencia del cliente y el empleado, a través de la digitalización y el uso efectivo de la tecnología.
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:23:08] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:23:41] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:23:41] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:25:25] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:25:25] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:28:14] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: El cielo es azul? from user_id: 1
+INFO:root:Generated response: No, el ciego no es azul. NEORIS ofrece una variedad de productos y servicios para la industria energética y de servicios públicos. ¿En qué puedo ayudarte hoy?
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:28:52] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:29] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:29] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:35] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:35] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:36] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:37] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:37] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:37] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:37] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:38] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:40] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:40] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:52] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:29:52] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:30:06] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: Hola amigo! from user_id: 1
+INFO:root:Generated response: ¡Hola! Soy un chatbot de NEORIS, aquí para ayudarte con tus preguntas y necesidades. ¿En qué puedo ayudarte hoy?
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:30:31] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:30:33] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:30:33] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:30:41] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:30:41] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:30:48] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:30:48] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:34:30] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:34:30] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:34:39] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: Hola como estas? from user_id: 1
+INFO:root:Generated response: ¡Hola! Como chatbot de NEORIS, estoy listo para ayudarte con tus preguntas y necesidades. ¿En qué puedo asistirte hoy? (Hello! As a NEORIS chatbot, I'm ready to help you with your questions and needs. What can I assist you with today?)
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:35:12] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:35:15] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:35:15] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:35:18] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/cleberp/Documents/SextoSemestre/prueba6web/Neoris/pages/api/server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:43:46] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: El cielo es azul? from user_id: 1
+INFO:root:Generated response: No, la pregunta no tiene nada que ver con Neoris. Si necesitas obtener información sobre los productos y servicios de Neoris, te sugiero formular una pregunta relacionada con ese tema. Por ejemplo, ¿Cuáles son los productos y servicios ofrecidos por Neoris? ¿En qué consiste el servicio de [servicio específico] de Neoris?
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:44:23] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/cleberp/Documents/SextoSemestre/prueba6web/Neoris/pages/api/server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: mps
+INFO:faiss.loader:Loading faiss.
+INFO:faiss.loader:Successfully loaded faiss.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-610-979
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:47:02] "OPTIONS /api/chat HTTP/1.1" 200 -
+INFO:root:Received question: El cielo es azul? from user_id: 1
+INFO:root:Generated response: No, el contexto actual se refiere a NEORIS, por lo que no puedo responder a preguntas sobre temas generales como el color del cielo. Si tienes alguna pregunta relacionada con los productos o servicios de NEORIS, estaré encantado de ayudarte.
+INFO:root:Chat history updated for user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:47:23] "POST /api/chat HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:47:43] "OPTIONS /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:47:43] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:47:45] "POST /api/chat/chathistory HTTP/1.1" 200 -
+INFO:root:Received history request from user_id: 1
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2024 12:47:46] "POST /api/chat/chathistory HTTP/1.1" 200 -

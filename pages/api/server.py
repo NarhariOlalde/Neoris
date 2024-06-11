@@ -40,6 +40,8 @@ template = """
 You are AI-powered chatbot designed to provide
 information and assistance for customers 
 for NEORIS.
+Do not answer question that has nothing to do regarding Neoris.
+Be always polite and formal with your answers.
 Do not say sentences like Based on the provided context...
 Give the answer totally sure about the information.
 If the user gives you a question in english respond in english
@@ -104,5 +106,43 @@ def chat():
         logging.error(f"Error occurred: {e}")
         return jsonify({'error': str(e)}), 500
 
+@app.route('/api/chat/chathistory', methods=['POST'])
+def chathistory():
+    try:
+        data = request.get_json()
+        user_id = data.get('user_id')
+        logging.info(f"Received history request from user_id: {user_id}")
+
+        if not user_id:
+            logging.error("User ID is missing in the request")
+            return jsonify({'error': 'User ID is missing'}), 400
+
+        user = users_collection.find_one({"_id": user_id})
+        if user:
+            historial_preguntas_respuestas = user.get("chat_bot", {}).get("historial_preguntas_respuestas", [])
+    
+            # Inicializa listas vacías para almacenar preguntas y respuestas
+            preguntas = []
+            respuestas = []
+
+            # Recorre cada entrada en el historial
+            for entry in historial_preguntas_respuestas:
+                pregunta = entry.get("pregunta", "")
+                respuesta = entry.get("respuesta", "")
+
+                # Agrega la pregunta y respuesta a las listas correspondientes
+                preguntas.append(pregunta)
+                respuestas.append(respuesta)
+            
+            # Devuelve las listas de preguntas y respuestas
+            return jsonify({'Previous_questions': preguntas, 'Previous_responses': respuestas})
+        else:
+            logging.error(f"User with user_id: {user_id} not found")
+            return jsonify({'error': f'User with user_id: {user_id} not found'}), 404
+    except Exception as e:
+        logging.error(f"Error occurred while getting chatHistory: {e}")
+        return jsonify({'error': str(e)}), 500
+
+    
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
